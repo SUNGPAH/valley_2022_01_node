@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "fldrmf1!",
+    "database": "kaist_intensive_1",
+    "host": "kaist-intensive-1.cbmxpnuzldys.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "admin",
+    "password": "fldrmf1!",
+    "database": "kaist_intensive_1",
+    "host": "kaist-intensive-1.cbmxpnuzldys.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "fldrmf1!",
+    "database": "kaist_intensive_1",
+    "host": "kaist-intensive-1.cbmxpnuzldys.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
