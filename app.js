@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const http = require('http');
 
 const express = require('express');
@@ -18,6 +21,8 @@ app.listen(port, () => console.log(`Server up and running on port ${port}.`));
 const db = require("./models");
 const GoogleForm = db.GoogleForm;
 const FormQuestion = db.FormQuestion;
+const FormQuestionOption = db.FormQuestionOption;
+
 
 app.get("/", async (req, res) => {
   console.log('---');
@@ -139,3 +144,25 @@ app.get("/formquestion/form", async (req,res) => {
 
   res.json({googleForm: googleForm, question: question})
 })
+
+app.get("/formquestionoption/create", async (req,res) => {
+
+  const question = await FormQuestionOption.create({
+    formQuestionId: 1,
+    title: "option1",
+    desc: "option1 desc",
+    oType: "radio"
+  })
+
+  return res.json({question: question, message: "hi just created"});
+})
+
+app.get("/formquestionoption/:id", async (req,res) => {
+  //localhost:3000/formquestionoption/1
+  const question = await FormQuestionOption.findOne({
+    where: {id: parseInt(req.params.id)}
+  })
+
+  return res.json({question: question, message: "fetched"});
+})
+
